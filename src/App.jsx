@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<UserManagement />} />
+        <Route path="*" element={<h1>404 - Page Not Found</h1>} />
       </Routes>
     </Router>
   )

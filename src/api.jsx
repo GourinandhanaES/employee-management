@@ -12,10 +12,12 @@ const axiosInstance = axios.create({
 // Fetch all users
 export const getUsers = async () => {
   try {
-    const response = await axiosInstance.get('/');
-    return response.data;
+    const response = await fetch('https://employee-management-server-5.onrender.com/users');
+    if (!response.ok) throw new Error('Failed to fetch users');
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error fetching users:', error.message);
+    console.error(error);
     return [];
   }
 };
