@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-// Set the base API URL to your Render deployed link
 const API_URL = 'https://employee-management-server-5.onrender.com/users';
 
-// Create an Axios instance with a timeout
+
 const axiosInstance = axios.create({
   baseURL: API_URL,
-  timeout: 5000, // Set a timeout of 5 seconds
+  timeout: 5000, 
 });
 
-// Fetch all users
+
 export const getUsers = async () => {
   try {
     const response = await fetch('https://employee-management-server-5.onrender.com/users');
@@ -22,7 +21,7 @@ export const getUsers = async () => {
   }
 };
 
-// Create a new user
+
 export const createUser = async (user) => {
   try {
     const response = await axiosInstance.post('/', user);
@@ -33,7 +32,7 @@ export const createUser = async (user) => {
   }
 };
 
-// Update an existing user
+
 export const updateUser = async (id, user) => {
   try {
     const response = await axiosInstance.put(`/${id}`, user);
@@ -44,11 +43,11 @@ export const updateUser = async (id, user) => {
   }
 };
 
-// Delete a user
+
 export const deleteUser = async (id) => {
   try {
     await axiosInstance.delete(`/${id}`);
-    return id; // Return the ID of the deleted user for reference
+    return id; 
   } catch (error) {
     console.error('Error deleting user:', error.message);
     return null;

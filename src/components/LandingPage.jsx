@@ -9,8 +9,8 @@ const LandingPage = () => {
       alert("Please select a role!");
       return;
     }
-    localStorage.setItem("userRole", role); // Save the selected role
-    window.location.href = "/dashboard"; // Redirect to User Management
+    localStorage.setItem("userRole", role); 
+    window.location.href = "/dashboard"; 
   };
 
   return (
