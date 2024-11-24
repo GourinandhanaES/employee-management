@@ -27,7 +27,6 @@ const UserManagement = () => {
   const handleLogout =()=>{
     localStorage.removeItem('userRole');
     sessionStorage.clear();
-
     navigate('/')
   };
 
@@ -65,12 +64,12 @@ const UserManagement = () => {
   return (
     <div className="container">
       <div className="d-flex justify-content-between align-items-center mt-2">
-        <h1 className="mx-auto mt-4 text-warning">User Management</h1>
+        <h1 className="mx-auto mt-4 text-warning">Employee Management</h1>
         <button className='btn btn-warning' onClick={handleLogout}>Logout</button>
       </div>
 
 
-      {(userRole === "Admin" || userRole ==="Editor") && (
+      {canAdd && (
       <div className="card mt-4">
         <div className="card-header">Add New User</div>
         <div className="card-body">
@@ -104,7 +103,7 @@ const UserManagement = () => {
       )}
 
 
-      <h2 className="mt-4 text-warning">User List</h2>
+      <h2 className="mt-4 text-warning">Employee List</h2>
       <table className="table table-bordered mt-2">
         <thead>
           <tr>
