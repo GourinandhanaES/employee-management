@@ -101,7 +101,6 @@ const LandingPage = () => {
             LOGIN
           </button>
     </div>
-            {/* onClick={() => window.location.href = "/dashboard"} */}
     </div>
   );
 };
